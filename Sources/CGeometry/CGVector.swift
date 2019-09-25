@@ -11,6 +11,16 @@ public extension CGVector {
 		self.init(dx: cos(angle) * length, dy: sin(angle) * length)
 	}
 	
+	init(_ point: CGPoint) {
+		dx = point.x
+		dy = point.y
+	}
+	
+	init(_ size: CGSize) {
+		dx = size.width
+		dy = size.height
+	}
+	
 	func clamped(to length: CGFloat) -> Self {
 		let len = self.length
 		

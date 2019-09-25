@@ -15,7 +15,7 @@ public extension CGSize {
 		height = vector.dy
 	}
 	
-	// MARK: Size × Float
+	// MARK: - Size × Float
 	
 	static func * (size: Self, scale: CGFloat) -> Self {
 		Self(

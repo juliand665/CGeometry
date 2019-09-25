@@ -38,7 +38,7 @@ public extension CGVector {
 		)
 	}
 	
-	// MARK: Vector × Vector
+	// MARK: - Vector × Vector
 	
 	static func + (lhs: Self, rhs: Self) -> Self {
 		Self(
@@ -88,7 +88,7 @@ public extension CGVector {
 		lhs.dy /= rhs.dy
 	}
 	
-	// MARK: Vector × Float
+	// MARK: - Vector × Float
 	
 	static func * (vector: Self, scale: CGFloat) -> Self {
 		Self(

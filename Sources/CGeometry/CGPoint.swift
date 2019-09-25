@@ -13,7 +13,7 @@ public extension CGPoint {
 		y = size.height
 	}
 	
-	// MARK: Point × Vector
+	// MARK: - Point × Vector
 	
 	static func + (point: Self, offset: CGVector) -> Self {
 		Self(

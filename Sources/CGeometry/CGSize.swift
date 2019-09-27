@@ -1,8 +1,6 @@
 import CoreGraphics
 
 public extension CGSize {
-	static var zero: CGSize { .init(width: 0, height: 0) }
-	
 	static var one: CGSize { .init(width: 1, height: 1) }
 	
 	init(_ point: CGPoint) {

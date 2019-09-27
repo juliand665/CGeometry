@@ -1,8 +1,6 @@
 import CoreGraphics
 
 public extension CGPoint {
-	static var zero: Self { Self(x: 0, y: 0) }
-	
 	init(_ vector: CGVector) {
 		self.init(
 			x: vector.dx,

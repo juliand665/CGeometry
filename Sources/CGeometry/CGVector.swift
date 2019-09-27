@@ -1,8 +1,6 @@
 import CoreGraphics
 
 public extension CGVector {
-	static var zero: Self { Self(dx: 0, dy: 0) }
-	
 	var length: CGFloat { hypot(dx, dy) }
 	
 	var angle: CGFloat { atan2(dy, dx) }

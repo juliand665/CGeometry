@@ -12,13 +12,17 @@ public extension CGVector {
 	}
 	
 	init(_ point: CGPoint) {
-		dx = point.x
-		dy = point.y
+		self.init(
+			dx: point.x,
+			dy: point.y
+		)
 	}
 	
 	init(_ size: CGSize) {
-		dx = size.width
-		dy = size.height
+		self.init(
+			dx: size.width,
+			dy: size.height
+		)
 	}
 	
 	func clamped(to length: CGFloat) -> Self {

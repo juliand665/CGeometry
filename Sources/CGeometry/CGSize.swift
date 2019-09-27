@@ -6,13 +6,17 @@ public extension CGSize {
 	static var one: CGSize { .init(width: 1, height: 1) }
 	
 	init(_ point: CGPoint) {
-		width = point.x
-		height = point.y
+		self.init(
+			width: point.x,
+			height: point.y
+		)
 	}
 	
 	init(_ vector: CGVector) {
-		width = vector.dx
-		height = vector.dy
+		self.init(
+			width: vector.dx,
+			height: vector.dy
+		)
 	}
 	
 	// MARK: - Size × Float

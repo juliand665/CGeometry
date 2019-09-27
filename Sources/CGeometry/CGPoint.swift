@@ -4,13 +4,17 @@ public extension CGPoint {
 	static var zero: Self { Self(x: 0, y: 0) }
 	
 	init(_ vector: CGVector) {
-		x = vector.dx
-		y = vector.dy
+		self.init(
+			x: vector.dx,
+			y: vector.dy
+		)
 	}
 	
 	init(_ size: CGSize) {
-		x = size.width
-		y = size.height
+		self.init(
+			x: size.width,
+			y: size.height
+		)
 	}
 	
 	// MARK: - Point × Vector

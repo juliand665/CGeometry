@@ -17,6 +17,15 @@ public extension CGPoint {
 		)
 	}
 	
+	// MARK: - Point × Point
+	
+	static func - (lhs: Self, rhs: Self) -> CGVector {
+		CGVector(
+			dx: lhs.x - rhs.x,
+			dy: lhs.y - rhs.y
+		)
+	}
+	
 	// MARK: - Point × Vector
 	
 	static func + (point: Self, offset: CGVector) -> Self {

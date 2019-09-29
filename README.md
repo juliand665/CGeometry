@@ -10,7 +10,7 @@
 
 # CGeometry
 
-###### Simple operators for CoreGraphics geometric constructs: `CGPoint`, `CGVector`, and `CGSize`.
+###### Simple operators (plus convenient initializers and constants) for CoreGraphics geometric constructs: `CGPoint`, `CGVector`, and `CGSize`.
 
 ### Example
 

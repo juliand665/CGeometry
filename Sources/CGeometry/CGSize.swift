@@ -47,6 +47,30 @@ public extension CGSize {
 		lhs.height -= rhs.height
 	}
 	
+	static func * (lhs: Self, rhs: Self) -> Self {
+		Self(
+			width: lhs.width * rhs.width,
+			height: lhs.height * rhs.height
+		)
+	}
+	
+	static func *= (lhs: inout Self, rhs: Self) {
+		lhs.width *= rhs.width
+		lhs.height *= rhs.height
+	}
+	
+	static func / (lhs: Self, rhs: Self) -> Self {
+		Self(
+			width: lhs.width / rhs.width,
+			height: lhs.height / rhs.height
+		)
+	}
+	
+	static func /= (lhs: inout Self, rhs: Self) {
+		lhs.width /= rhs.width
+		lhs.height /= rhs.height
+	}
+	
 	// MARK: - Size × Float
 	
 	static func * (size: Self, scale: CGFloat) -> Self {

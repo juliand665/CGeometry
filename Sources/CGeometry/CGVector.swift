@@ -73,28 +73,37 @@ public extension CGVector {
 		lhs.dy -= rhs.dy
 	}
 	
-	static func * (lhs: Self, rhs: Self) -> Self {
+	// MARK: - Vector × Size
+	
+	static func * (vector: Self, scale: CGSize) -> Self {
 		Self(
-			dx: lhs.dx * rhs.dx,
-			dy: lhs.dy * rhs.dy
+			dx: vector.dx * scale.width,
+			dy: vector.dy * scale.height
 		)
 	}
 	
-	static func *= (lhs: inout Self, rhs: Self) {
-		lhs.dx *= rhs.dx
-		lhs.dy *= rhs.dy
-	}
-	
-	static func / (lhs: Self, rhs: Self) -> Self {
+	static func * (scale: CGSize, vector: Self) -> Self {
 		Self(
-			dx: lhs.dx / rhs.dx,
-			dy: lhs.dy / rhs.dy
+			dx: vector.dx * scale.width,
+			dy: vector.dy * scale.height
 		)
 	}
 	
-	static func /= (lhs: inout Self, rhs: Self) {
-		lhs.dx /= rhs.dx
-		lhs.dy /= rhs.dy
+	static func *= (vector: inout Self, scale: CGSize) {
+		vector.dx *= scale.width
+		vector.dy *= scale.height
+	}
+	
+	static func / (vector: Self, scale: CGSize) -> Self {
+		Self(
+			dx: vector.dx / scale.width,
+			dy: vector.dy / scale.height
+		)
+	}
+	
+	static func /= (vector: inout Self, scale: CGSize) {
+		vector.dx /= scale.width
+		vector.dy /= scale.height
 	}
 	
 	// MARK: - Vector × Float

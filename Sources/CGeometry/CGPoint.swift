@@ -64,6 +64,39 @@ public extension CGPoint {
 		point.y -= offset.dy
 	}
 	
+	// MARK: - Point × Size
+	
+	static func * (point: Self, scale: CGSize) -> Self {
+		Self(
+			x: point.x * scale.width,
+			y: point.y * scale.height
+		)
+	}
+	
+	static func * (scale: CGSize, point: Self) -> Self {
+		Self(
+			x: point.x * scale.width,
+			y: point.y * scale.height
+		)
+	}
+	
+	static func *= (point: inout Self, scale: CGSize) {
+		point.x *= scale.width
+		point.y *= scale.height
+	}
+	
+	static func / (point: Self, scale: CGSize) -> Self {
+		Self(
+			x: point.x / scale.width,
+			y: point.y / scale.height
+		)
+	}
+	
+	static func /= (point: inout Self, scale: CGSize) {
+		point.x /= scale.width
+		point.y /= scale.height
+	}
+	
 	// MARK: - Point × Float
 	
 	static func * (point: Self, scale: CGFloat) -> Self {

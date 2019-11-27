@@ -15,6 +15,13 @@ public extension CGPoint {
 		)
 	}
 	
+	static prefix func - (point: Self) -> Self {
+		Self(
+			x: -point.x,
+			y: -point.y
+		)
+	}
+	
 	// MARK: - Point × Point
 	
 	static func - (lhs: Self, rhs: Self) -> CGVector {

@@ -21,6 +21,13 @@ public extension CGSize {
 		)
 	}
 	
+	func map(_ transform: (CGFloat) throws -> CGFloat) rethrows -> Self {
+		Self(
+			width: try transform(width),
+			height: try transform(height)
+		)
+	}
+	
 	// MARK: - Size × Size
 	
 	static func + (lhs: Self, rhs: Self) -> Self {

@@ -15,6 +15,13 @@ public extension CGPoint {
 		)
 	}
 	
+	func map(_ transform: (CGFloat) throws -> CGFloat) rethrows -> Self {
+		Self(
+			x: try transform(x),
+			y: try transform(y)
+		)
+	}
+	
 	static prefix func - (point: Self) -> Self {
 		Self(
 			x: -point.x,

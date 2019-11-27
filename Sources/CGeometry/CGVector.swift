@@ -23,6 +23,13 @@ public extension CGVector {
 		)
 	}
 	
+	func map(_ transform: (CGFloat) throws -> CGFloat) rethrows -> Self {
+		Self(
+			dx: try transform(dx),
+			dy: try transform(dy)
+		)
+	}
+	
 	func clamped(to length: CGFloat) -> Self {
 		let len = self.length
 		

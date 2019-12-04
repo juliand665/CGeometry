@@ -15,6 +15,7 @@ public extension CGPoint {
 		)
 	}
 	
+	/// applies the given function `transform` to both components
 	func map(_ transform: (CGFloat) throws -> CGFloat) rethrows -> Self {
 		Self(
 			x: try transform(x),

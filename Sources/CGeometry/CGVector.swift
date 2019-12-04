@@ -1,8 +1,10 @@
 import CoreGraphics
 
 public extension CGVector {
+	/// the length of the vector in space, calculated using the pythagorean theorem (`hypot(_:_:)`)
 	var length: CGFloat { hypot(dx, dy) }
 	
+	/// angle to the x-axis, counterclockwise (e.g. π = straight up)
 	var angle: CGFloat { atan2(dy, dx) }
 	
 	init(angle: CGFloat, length: CGFloat) {
@@ -23,6 +25,7 @@ public extension CGVector {
 		)
 	}
 	
+	/// applies the given function `transform` to both components
 	func map(_ transform: (CGFloat) throws -> CGFloat) rethrows -> Self {
 		Self(
 			dx: try transform(dx),
@@ -30,11 +33,12 @@ public extension CGVector {
 		)
 	}
 	
-	func clamped(to length: CGFloat) -> Self {
-		let len = self.length
+	/// scales the vector down if necessary to be no longer than `newLength`
+	func clamped(to newLength: CGFloat) -> Self {
+		let length = self.length
 		
-		if len > length {
-			return self * (length / len)
+		if length > newLength {
+			return self * (newLength / length)
 		} else {
 			return self
 		}

@@ -30,6 +30,10 @@ public extension CGPoint {
 		)
 	}
 	
+	var withFlippedAxes: Self {
+		Self(x: y, y: x)
+	}
+	
 	// MARK: - Point × Point
 	
 	static func - (lhs: Self, rhs: Self) -> CGVector {
